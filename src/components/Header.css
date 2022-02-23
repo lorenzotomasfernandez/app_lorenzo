@@ -1,0 +1,13 @@
+*{
+    margin: 0;
+    padding:0;
+}
+
+.encabezado{
+    background:violet;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+}
+
