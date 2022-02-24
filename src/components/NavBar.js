@@ -10,7 +10,7 @@ export const NavBar = () => {
          <li><a href="#">INICIO</a></li>
          <li>
           <a href="#">PRODUCTOS</a>
-            <ul className='tamaño'>
+            <ul className='tamano'>
               <li><a href='#'>REMERAS</a></li>
               <li><a href='#'>PANTALONES</a></li>
             </ul>

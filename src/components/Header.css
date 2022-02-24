@@ -4,7 +4,7 @@
 }
 
 .encabezado{
-    background:violet;
+    background:red;
     display: flex;
     justify-content: space-between;
     flex-direction: column;

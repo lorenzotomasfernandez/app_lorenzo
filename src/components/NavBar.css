@@ -23,21 +23,22 @@ a:hover{
 
  nav ul li ul{
      position: absolute;
-     background: violet;
+     background: red;
      display: flex;
      flex-direction: column;
 
  }
 
  h1{
-     color: white;
- }
+    color: white;
+    padding: 12px 20px;
+}
 
  li {
      width:25%;
  }
 
-.tamaño{
-    width: 25%;;
+.tamano li{
+    width: 100%;;
 }
 
