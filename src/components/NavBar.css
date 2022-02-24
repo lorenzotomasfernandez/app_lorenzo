@@ -26,7 +26,7 @@ a:hover{
      background: red;
      display: flex;
      flex-direction: column;
-
+     min-width: 100%;
  }
 
  h1{
@@ -35,10 +35,10 @@ a:hover{
 }
 
  li {
+     position: relative;
      width:25%;
  }
 
 .tamano li{
     width: 100%;;
 }
-
