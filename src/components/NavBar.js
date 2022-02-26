@@ -3,9 +3,7 @@ import "./NavBar.css"
 
 export const NavBar = () => {
   return (
-    
     <nav>
-      <h1>TIENDA ONLINE</h1>
        <ul>
          <li><a href="#">INICIO</a></li>
          <li>

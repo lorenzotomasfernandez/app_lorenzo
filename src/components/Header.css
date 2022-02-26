@@ -11,3 +11,13 @@
 
 }
 
+.cart{
+    float: left;
+    padding: 12px 20px ;
+}
+
+h1{
+    color: white;
+    padding: 12px 20px 12px 20px;
+    float: right;
+}
