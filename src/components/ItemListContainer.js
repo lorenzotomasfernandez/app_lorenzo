@@ -1,12 +1,17 @@
-import './ItemListContainer.css';
+import { useState } from "react"
+import ItemCount from './ItemCount'
 
-const ItemListContainer = (props) => {
+const ItemListContainer = () => {
+    const [stock, setStock] = useState(5)
+    const addToCart = (added) => {
+        if(stock - added >= 0)
+            setStock(stock - added)
+    }
 
-    console.log(props)
-
-    return(
-    <h2> ¡Bienvenido {props.nombre} {props.apellido} a mi pagina web!</h2>
-  )
+    return (
+        <div className="cart-list">
+            <ItemCount name="Producto 1" stock={stock} init={1} onAdd={addToCart} />
+        </div>
+    )
 }
-
-export default ItemListContainer;
+export default ItemListContainer
