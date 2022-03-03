@@ -5,13 +5,23 @@ import { useState } from "react"
     
     const producto = props.stock > 0
 
-    const sumar = () =>{
-        if(contador < props.stock) setContador(contador + 1)
+    const sumar = () => {
+
+        if(contador < props.stock){
+            setContador(contador + 1)
+            if(props.stock >= 1){
+                props.setDisplayStock(props.displayStock - 1)
+            }
     }
 
     const restar = () => {
-        if( contador > 1) setContador(contador - 1)
-    }
+        
+        if( contador > 1){
+            setContador(contador - 1)
+            if(props.stock >= 1){
+                props.setDisplayStock(props.displayStock + 1)
+            }
+        }
 
     const addToCart = () => {
         props.onAdd(contador); setContador(1)

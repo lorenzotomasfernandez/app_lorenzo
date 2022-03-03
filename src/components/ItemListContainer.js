@@ -3,6 +3,7 @@ import ItemCount from './ItemCount'
 
 const ItemListContainer = () => {
     const [stock, setStock] = useState(5)
+    const [displayStock, setDisplayStock] = useState(5)
     const addToCart = (added) => {
         if(stock - added >= 0)
             setStock(stock - added)
@@ -10,7 +11,8 @@ const ItemListContainer = () => {
 
     return (
         <div className="cart-list">
-            <ItemCount name="Producto 1" stock={stock} init={1} onAdd={addToCart} />
+            <ItemCount name="Producto 1" stock={stock} init={1} onAdd={addToCart}
+            displayStock={displayStock} setDisplayStock={setDisplayStock} />       
         </div>
     )
 }
