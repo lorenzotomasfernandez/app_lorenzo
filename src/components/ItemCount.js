@@ -11,25 +11,25 @@ import { useState } from "react"
 
         if(contador < props.stock){
             setContador(contador + 1) 
-            if(props.stock >= 1){
-                props.setDisplayStock(props.displayStock - 1)
-            }
-    }
+        }
     }
 
     const restar = () => {
         
         if( contador > 1){
             setContador(contador - 1)
-            if(props.stock >= 1){
-                props.setDisplayStock(props.displayStock + 1)
-            }
         }
     }
     
-    const addToCart = () => {
-        props.onAdd(contador); setContador(1)
-    }
+    const [stock, setStock] = useState(5)
+
+    const addToCart = (added) => {
+
+        if(stock - added >= 0)
+        
+        setStock(stock - added)
+        
+        }
 
     return (
         <div>
