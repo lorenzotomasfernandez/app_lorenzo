@@ -21,14 +21,8 @@ import { useState } from "react"
         }
     }
     
-    const [stock, setStock] = useState(5)
-
-    const addToCart = (added) => {
-
-        if(stock - added >= 0)
-        
-        setStock(stock - added)
-        
+    const addToCart = () => {
+        console.log("Ok")
         }
 
     return (
@@ -36,7 +30,7 @@ import { useState } from "react"
             <h4>{props.name}</h4>
             <p>Hay {props.stock} en stock</p>
             <button onClick={sumar}>+</button>
-            <input value={contador}/>
+            <input value={contador} init={props.init}/>
             <button onClick={restar}>-</button>
             <div>
                 <button onClick={addToCart}>Agregar al carrito</button>
