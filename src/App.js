@@ -1,15 +1,14 @@
 import './App.css';
 import Header from './components/Header';
-import ItemListContainer from './components/ItemListContainer';
+import Main from './components/Main';
+import Piedepagina from './components/Piedepagina';
 
 function App() {
   return (
     <>
         <Header/>
-        <ItemListContainer 
-                           nombre="Lorenzo"
-                           apellido="Fernandez"
-        />
+        <Main/>
+        <Piedepagina/>
     </>
   );
 }

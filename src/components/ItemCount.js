@@ -1,11 +1,12 @@
 import { useState } from "react"
+import {Button} from "react-bootstrap";
+import './ItemCount.css';
 
     const ItemCount = (props) => {
 
         const [contador, setContador] = useState(props.init)
     
     const producto = props.stock > 0
-
 
     const sumar = () => {
 
@@ -27,13 +28,13 @@ import { useState } from "react"
 
     return (
         <div>
-            <h4>{props.name}</h4>
-            <p>Hay {props.stock} en stock</p>
-            <button onClick={sumar}>+</button>
-            <input value={contador} init={props.init}/>
-            <button onClick={restar}>-</button>
+            <h3>{props.name}</h3>
+            <h6>Stock disponible: {props.stock}</h6>
+            <Button variant="success" onClick={sumar}>+</Button>{' '}
+            <span init={props.init}>{contador}</span>
+            <Button variant="danger" onClick={restar}>-</Button>
             <div>
-                <button onClick={addToCart}>Agregar al carrito</button>
+               <Button variant="primary" onClick={addToCart}>Añadir al carrito</Button>{' '}
             </div>
         </div>
     )

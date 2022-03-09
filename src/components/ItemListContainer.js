@@ -1,10 +1,11 @@
 
 import ItemList from './ItemList'
+import './ItemListContainer.css';
 
 const ItemListContainer = () => {
 
     return (
-        <div>
+        <div className='color'>
             <ItemList/>
         </div>      
     )

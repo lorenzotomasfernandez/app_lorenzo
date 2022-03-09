@@ -1,17 +1,23 @@
 import ItemCount from "./ItemCount";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import {Card} from "react-bootstrap";
+import './Item.css';
 
 
 const Item = (props) => {
     return (
-        <div>
-            <h4>{props.name}</h4>
-            <img src={props.img}/>
-            <p>Precio: ${props.precio}</p>
-            <div>
-                <p>Stock disponible: {props.stock}</p>
-                <ItemCount init={1} stock={props.stock}/>
-            </div>
-        </div>
+        
+            <Card className="cardList" style={{ width: '15rem' }}>
+                <Card.Img variant="top" src={props.img} />
+                <Card.Body>
+                  <Card.Title>{props.name}</Card.Title>
+                  <Card.Text>
+                    <h6>${props.precio}</h6>
+                  </Card.Text>
+                  <ItemCount init={1} stock={props.stock}/>
+                </Card.Body>
+            </Card>
+        
     )
 }
 
