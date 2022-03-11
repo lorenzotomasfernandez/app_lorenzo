@@ -1,6 +1,5 @@
-import ItemCount from "./ItemCount";
-import 'bootstrap/dist/css/bootstrap.min.css';
 import {Card} from "react-bootstrap";
+import {Button} from "react-bootstrap";
 import './Item.css';
 
 
@@ -12,9 +11,9 @@ const Item = (props) => {
                 <Card.Body>
                   <Card.Title>{props.name}</Card.Title>
                   <Card.Text>
-                    <h6>${props.precio}</h6>
+                    ${props.precio}
                   </Card.Text>
-                  <ItemCount init={1} stock={props.stock}/>
+                       <Button variant="success">Ver mas</Button>{' '}
                 </Card.Body>
             </Card>
         

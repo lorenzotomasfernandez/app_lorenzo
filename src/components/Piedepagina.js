@@ -12,27 +12,29 @@ import { GrInstagram } from "react-icons/gr";
 
 const Piedepagina = () => {
     return(
-        <footer className='color1'>
-            <div className='redSocial'>
-               <h2><GrInstagram/> lftech.ar</h2>
-               <p>Estamos en instagram</p>
-               <Button variant="secondary" size="lg" active>SEGUINOS</Button>
+        <footer>
+           <div className='color1'>
+               <div className='redSocial'>
+                  <h2><GrInstagram/> lftech.ar</h2>
+                  <p>Estamos en instagram</p>
+                  <Button variant="secondary" size="lg" active>SEGUINOS</Button>
+               </div>
             </div>
             <div className='list'>
                 <h3><b>¡Sigamos conectados!</b></h3>
                <ListGroup horizontal>
-                 <ListGroup.Item><AiOutlineFacebook/></ListGroup.Item>
-                 <ListGroup.Item><ImWhatsapp/></ListGroup.Item>
-                 <ListGroup.Item><FiMail/></ListGroup.Item>
+                 <ListGroup.Item><a href=''><AiOutlineFacebook/></a></ListGroup.Item>
+                 <ListGroup.Item><a href=''><ImWhatsapp/></a></ListGroup.Item>
+                 <ListGroup.Item><a href=''><FiMail/></a></ListGroup.Item>
                </ListGroup>
             </div>
             <div className='pago'>
                 <h3><b>Medios de pago:</b></h3>
                 <ListGroup horizontal>
-                 <ListGroup.Item><FaCcVisa/></ListGroup.Item>
-                 <ListGroup.Item><FaCcMastercard/></ListGroup.Item>
-                 <ListGroup.Item><SiAmericanexpress/></ListGroup.Item>
-                 <ListGroup.Item><FaCcPaypal/></ListGroup.Item>
+                 <ListGroup.Item><a href=''><FaCcVisa/></a></ListGroup.Item>
+                 <ListGroup.Item><a href=''><FaCcMastercard/></a></ListGroup.Item>
+                 <ListGroup.Item><a href=''><SiAmericanexpress/></a></ListGroup.Item>
+                 <ListGroup.Item><a href=''><FaCcPaypal/></a></ListGroup.Item>
                </ListGroup>
             </div>
         </footer>

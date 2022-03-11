@@ -1,5 +1,4 @@
 import React from 'react'
-import 'bootstrap/dist/css/bootstrap.min.css';
 import CartWidget from './CartWidget';
 import {Nav,Navbar,NavDropdown,Container} from "react-bootstrap";
 

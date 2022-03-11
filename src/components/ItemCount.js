@@ -6,38 +6,38 @@ import './ItemCount.css';
 
         const [contador, setContador] = useState(props.init)
     
-    const producto = props.stock > 0
-
-    const sumar = () => {
-
-        if(contador < props.stock){
-            setContador(contador + 1) 
-        }
-    }
-
-    const restar = () => {
-        
-        if( contador > 1){
-            setContador(contador - 1)
-        }
-    }
+        const producto = props.stock > 0
     
-    const addToCart = () => {
-        console.log("Ok")
+        const sumar = () => {
+    
+            if(contador < props.stock){
+                setContador(contador + 1) 
+            }
         }
-
-    return (
-        <div>
-            <h3>{props.name}</h3>
-            <h6>Stock disponible: {props.stock}</h6>
-            <Button variant="success" onClick={sumar}>+</Button>{' '}
-            <span init={props.init}>{contador}</span>
-            <Button variant="danger" onClick={restar}>-</Button>
+    
+        const restar = () => {
+            
+            if( contador > 1){
+                setContador(contador - 1)
+            }
+        }
+        
+        const addToCart = () => {
+            console.log("Ok")
+            }
+    
+        return (
             <div>
-               <Button variant="primary" onClick={addToCart}>Añadir al carrito</Button>{' '}
+                <h3>{props.name}</h3>
+                <h6>Stock disponible: {props.stock}</h6>
+                <Button variant="success" onClick={sumar}>+</Button>{' '}
+                <span init={props.init}>{contador}</span>
+                <Button variant="danger" onClick={restar}>-</Button>
+                <div>
+                   <Button variant="primary" onClick={addToCart}>Añadir al carrito</Button>{' '}
+                </div>
             </div>
-        </div>
-    )
+        )
 }    
 
 export default ItemCount
