@@ -26,7 +26,7 @@ const ItemDetailCont = () => {
     return(
         <div>
            { loading && <h2>Cargando...</h2>}
-            <ItemDetail productos={productos}/>
+            <ItemDetail productos={productos} name={item.name} img={item.img} precio={item.precio} stock={item.stock}/>
         </div>
     )
 }

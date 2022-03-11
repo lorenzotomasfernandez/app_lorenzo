@@ -5,7 +5,7 @@ function Main() {
     return (
         
             <main>
-                <ItemListContainer/>             
+                <ItemListContainer/>           
             </main>
         )
     }

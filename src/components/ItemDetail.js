@@ -1,12 +1,14 @@
-import ItemCount from "./ItemCount";S
+import ItemCount from "./ItemCount";
 
-const ItemDetail = () => {
+const ItemDetail = (props) => {
     return (
         <div>
-            <ItemCount/>
+            <p>{props.name}</p>
+            <p>${props.precio}</p>
+            <img src={props.img}></img>
+            <ItemCount stock={props.stock} init={1}/>
         </div>
 )
 }
-
 
 export default ItemDetail;
