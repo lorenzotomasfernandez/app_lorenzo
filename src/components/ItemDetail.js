@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import ItemCount from "./ItemCount";
 
 const ItemDetail = (props) => {
@@ -11,18 +10,3 @@ const ItemDetail = (props) => {
         </div>
 )
 }
-
-=======
-import ItemCount from "./ItemCount";S
-
-const ItemDetail = () => {
-    return (
-        <div>
-            <ItemCount/>
-        </div>
-)
-}
-
-
->>>>>>> 588989044f3b5750660bc4dfe8821cd01fbb6581
-export default ItemDetail;
