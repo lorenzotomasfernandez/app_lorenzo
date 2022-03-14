@@ -7,8 +7,7 @@ const ItemDetailContainer = () => {
     const [loading, setLoading] = useState(true);
     const [productos, setProductos] = useState([]);
 
-    useEffect(()=>{
-    const work = 
+    useEffect(()=>{ 
     
     new Promise ((resolve, reject) => {
         setTimeout(() => {
@@ -21,12 +20,11 @@ const ItemDetailContainer = () => {
     .finally(()=>{
         setLoading(false)
     })
-})
+},[])
 
     return(
         <div>
-           { loading && <h2>Cargando...</h2>}
-            <ItemDetail productos={productos} name={item.name} img={item.img} precio={item.precio} stock={item.stock}/>
+           { loading ? <h2>Cargando...</h2> : <ItemDetail productos={productos}/>}
         </div>
     )
 }
