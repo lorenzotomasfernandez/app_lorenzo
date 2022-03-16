@@ -23,6 +23,7 @@ const productoPromise = new Promise((resolve,rej)=>{
     const [loading, setLoading] = useState([false])
     const [productos, setProductos] = useState([])
     const {categoria} = useParams()
+    console.log(categoria)
 
     useEffect(()=>{
         if(categoria){
@@ -45,7 +46,7 @@ const productoPromise = new Promise((resolve,rej)=>{
 
     return (
         <div className='color'>
-            {loading ? <h2> Cargando... </h2> : <ItemList productos={productosInicial}/>}
+            {loading ? <h2> Cargando... </h2> : <ItemList productos={productos}/>}
         </div>      
     )
 }
