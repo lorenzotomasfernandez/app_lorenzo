@@ -20,6 +20,7 @@ const productoPromise = new Promise((resolve,rej)=>{
 
   export const ItemListContainer = ({}) => {
 
+    const [loading, setLoading] = useState([true])
     const [productos, setProductos] = useState([])
     const {id} = useParams()
 
@@ -36,6 +37,13 @@ const productoPromise = new Promise((resolve,rej)=>{
           .catch((err)=> console.log(err))
         }
       },[id])
+      .then((respuesta)=>{
+        setProductos(productosInicial)
+    })
+    .finally(()=>{
+        setLoading(false)
+    })
+}
 
     return (
         <div className='color'>
