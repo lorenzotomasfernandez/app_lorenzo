@@ -10,3 +10,5 @@ const ItemDetail = (props) => {
         </div>
 )
 }
+
+export default ItemDetail

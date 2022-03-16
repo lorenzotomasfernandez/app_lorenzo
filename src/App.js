@@ -1,20 +1,25 @@
 import './App.css';
-import Header from './components/Header';
-import Main from './components/Main';
+import './components/Main.css';
+import ItemDetailContainer from './components/ItemDetailContainer';
+import ItemListContainer from './components/ItemListContainer';
+import Menudenavegacion from './components/Menudenavegacion';
 import Piedepagina from './components/Piedepagina';
-import { BrowserRouter } from "react-router-dom";
-import { ToastContainer } from "react-toastify"
-import 'react-toastify/dist/ReactToastify.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Cart from './components/Cart';
 
 function App() {
   return (
     <BrowserRouter>
-    
-        <Header/>
-        <Main/>
+        <Menudenavegacion/>
+        <Routes>
+          <Route path='/' element={<ItemListContainer/>} />
+          <Route path='/category/:id' element={<ItemListContainer/>} />
+          <Route path='/item/:id' element={<ItemDetailContainer />} />
+          <Route path='/cart' element={<Cart/>} />
+        </Routes>
         <Piedepagina/>
     </BrowserRouter>
   );
-}
+  }
 
 export default App;
