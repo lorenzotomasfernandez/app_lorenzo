@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import { useParams } from 'react-router-dom';
 import ItemDetail from './ItemDetail'
 
-const productos =  [ {id : 1, categoria: "motorola" , name: "Moto E 20", img:"./imagenes/motoe20.jpg", precio: 30000, stock: 10}]
+const productos =  [ {id : 1, categoria: "motorola" , name: "Moto E 20", img:"../imagenes/motoe20.jpg", precio: 30000, stock: 10}]
 
 const productosPromise = new Promise((resolve,rej)=>{
 
@@ -14,6 +14,7 @@ const productosPromise = new Promise((resolve,rej)=>{
 export const ItemDetailContainer = () => {
 
     const [producto, setProducto] = useState([])
+    const [loading, setLoading] = useState(true)
     const {categoria} = useParams()
 
     console.log(categoria)
@@ -23,14 +24,19 @@ export const ItemDetailContainer = () => {
 
     useEffect(()=>{ 
         getItem()
-        .then((resolve)=> setProducto(resolve.filter(p => p.categoria == categoria)))
+        .then((resolve)=> {
+        setProducto(resolve)
+        setLoading(false)
+        })
         .catch((err)=> console.log(err))
       },[categoria])
       console.log(producto)
 
     return(
         <div>
-            <ItemDetail productos={productos}/>
+            {
+              loading ? <span> Cargando... </span> : <ItemDetail producto={producto}/>
+            }
         </div>
     )
 }

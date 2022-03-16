@@ -2,7 +2,6 @@ import ItemList from './ItemList'
 import { useState, useEffect } from "react"
 import { useParams } from 'react-router-dom';
 
-
 let productosInicial = [
     { id : 1, categoria: "motorola" , name: "Moto E 20", img:"./imagenes/motoe20.jpg", precio: 30000, stock: 10} ,
     { id : 2, categoria: "motorola" , name: "Moto G 20", img:"./imagenes/motog20.jpg", precio: 45000, stock: 5},

@@ -1,12 +1,12 @@
 import ItemCount from "./ItemCount";
 
-const ItemDetail = (props) => {
+const ItemDetail = ({producto}) => {
     return (
         <div>
-            <p>{props.productos.name}</p>
-            <p>${props.productos.precio}</p>
-            <img src={props.productos.img}></img>
-            <ItemCount stock={props.productos.stock} init={1}/>
+            <p>{producto[0].name}</p>
+            <p>${producto[0].precio}</p>
+            <img src={producto[0].img}></img>
+            <ItemCount stock={producto[0].stock} init={1}/>
         </div>
 )
 }
