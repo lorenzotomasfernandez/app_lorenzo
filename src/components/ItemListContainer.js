@@ -1,5 +1,6 @@
 import ItemList from './ItemList'
 import { useState, useEffect } from "react"
+import { useParams } from 'react-router-dom';
 
 let productosInicial = [
     { id : 1, categoria: "motorola" , name: "Moto E 20", img:"./imagenes/motoe20.jpg", precio: 30000, stock: 10} ,
@@ -10,25 +11,31 @@ let productosInicial = [
     { id : 6 , categoria: "samsung" , name: "Samsung S 21", img:"./imagenes/samsungs21.jpg", precio: 30000, stock: 9}
 ]
 
-const ItemListContainer = () => {
-    const [loading, setLoading] = useState(true);
-    const [productos, setProductos] = useState([]);
-    
-    useEffect(()=>{
-    
-    new Promise ((resolve, reject) => {
-        setTimeout(() => {
-            resolve(productosInicial)
-        }, 3000)
-    })
-    .then((respuesta)=>{
-        setProductos(productosInicial)
-    })
-    .finally(()=>{
-        setLoading(false)
-    })
-},[])
+const productoPromise = new Promise((resolve,rej)=>{
 
+    setTimeout(() => {
+      resolve(productosInicial)
+    }, 3000);
+  })
+
+  export const ItemListContainer = ({}) => {
+
+    const [productos, setProductos] = useState([])
+    const {id} = useParams()
+
+    useEffect(()=>{
+
+        if(id){
+          productoPromise
+          .then((data)=>{
+            setProductos(data.filter(p => p.categoria == id))
+          })
+        }else{
+          productoPromise
+          .then((data)=> setProductos(data))
+          .catch((err)=> console.log(err))
+        }
+      },[id])
 
     return (
         <div className='color'>
