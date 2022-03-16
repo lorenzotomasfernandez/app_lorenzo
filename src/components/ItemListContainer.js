@@ -9,7 +9,7 @@ let productosInicial = [
     { id : 3, categoria: "motorola" , name: "Moto One Action", img:"./imagenes/motooneaction.jpg", precio: 50000, stock: 7},
     { id : 4, categoria: "motorola" , name: "Moto G 30", img:"./imagenes/motog30.jpg", precio: 45000, stock: 6},
     { id : 5, categoria: "motorola" , name: "Moto E 7i", img:"./imagenes/motoe7i.png", precio: 35000, stock: 12},
-    { id : 6 , categoria: "samsung" , name: "Samsung S 21", img:"./imagenes/samsungs21.jpg", precio: 30000, stock: 9}
+    { id : 6, categoria: "samsung" , name: "Samsung S 21", img:"./imagenes/samsungs21.jpg", precio: 30000, stock: 9}
 ]
 
 const productoPromise = new Promise((resolve,rej)=>{
@@ -23,25 +23,26 @@ const productoPromise = new Promise((resolve,rej)=>{
 
     const [loading, setLoading] = useState([false])
     const [productos, setProductos] = useState([])
-    const {id} = useParams()
+    const {categoria} = useParams()
 
     useEffect(()=>{
-        if(id){
+        if(categoria){
           productoPromise
-          .then((data)=>{
-            setProductos(data.filter(p => p.categoria == id))
+          .then((resolve)=>{
+            setProductos(resolve.filter(p => p.categoria == categoria))
             setLoading(false)
           })
         }else{
           productoPromise
-          .then((data)=> { 
-          setProductos(data)
+          .then((resolve)=> { 
+          setProductos(resolve)
           setLoading(false)
         })
           
           .catch((err)=> console.log(err))
         }
-      },[id])
+      },[categoria])
+
 
     return (
         <div className='color'>
