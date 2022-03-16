@@ -18,8 +18,8 @@ export const Menudenavegacion = () => {
                  navbarScroll
                >
                  <NavDropdown title="Productos" id="navbarScrollingDropdown">
-                  <Link to="/category/motorola"><NavDropdown.Item>Motorola</NavDropdown.Item></Link>
-                  <Link to="/category/samsung"><NavDropdown.Item>Samsung</NavDropdown.Item></Link>
+                  <Link to="/categoria/motorola"><NavDropdown.Item>Motorola</NavDropdown.Item></Link>
+                  <Link to="/categoria/samsung"><NavDropdown.Item>Samsung</NavDropdown.Item></Link>
                  </NavDropdown>
                </Nav>
                   <CartWidget/>

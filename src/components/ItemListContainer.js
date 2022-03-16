@@ -2,6 +2,7 @@ import ItemList from './ItemList'
 import { useState, useEffect } from "react"
 import { useParams } from 'react-router-dom';
 
+
 let productosInicial = [
     { id : 1, categoria: "motorola" , name: "Moto E 20", img:"./imagenes/motoe20.jpg", precio: 30000, stock: 10} ,
     { id : 2, categoria: "motorola" , name: "Moto G 20", img:"./imagenes/motog20.jpg", precio: 45000, stock: 5},
@@ -20,30 +21,27 @@ const productoPromise = new Promise((resolve,rej)=>{
 
   export const ItemListContainer = ({}) => {
 
-    const [loading, setLoading] = useState([true])
+    const [loading, setLoading] = useState([false])
     const [productos, setProductos] = useState([])
     const {id} = useParams()
 
     useEffect(()=>{
-
         if(id){
           productoPromise
           .then((data)=>{
             setProductos(data.filter(p => p.categoria == id))
+            setLoading(false)
           })
         }else{
           productoPromise
-          .then((data)=> setProductos(data))
+          .then((data)=> { 
+          setProductos(data)
+          setLoading(false)
+        })
+          
           .catch((err)=> console.log(err))
         }
       },[id])
-      .then((respuesta)=>{
-        setProductos(productosInicial)
-    })
-    .finally(()=>{
-        setLoading(false)
-    })
-}
 
     return (
         <div className='color'>
