@@ -13,7 +13,7 @@ function App() {
         <Menudenavegacion/>
         <Routes>
           <Route path='/' element={<ItemListContainer/>} />
-          <Route path='/categoria/:categoria' element={<ItemListContainer/>} />
+          <Route path='/categoria/:id' element={<ItemListContainer/>} />
           <Route path='/item/:id' element={<ItemDetailContainer />} />
           <Route path='/cart' element={<Cart/>} />
         </Routes>

@@ -22,14 +22,14 @@ const productoPromise = new Promise((resolve,rej)=>{
 
     const [loading, setLoading] = useState([false])
     const [productos, setProductos] = useState([])
-    const {categoria} = useParams()
-    console.log(categoria)
+    const {id} = useParams()
+    console.log(id)
 
     useEffect(()=>{
-        if(categoria){
+        if(id){
           productoPromise
           .then((resolve)=>{
-            setProductos(resolve.filter(p => p.categoria == categoria))
+            setProductos(resolve.filter(p => p.id == id))
             setLoading(false)
           })
         }else{
@@ -41,7 +41,7 @@ const productoPromise = new Promise((resolve,rej)=>{
           
           .catch((err)=> console.log(err))
         }
-      },[categoria])
+      },[id])
 
 
     return (
