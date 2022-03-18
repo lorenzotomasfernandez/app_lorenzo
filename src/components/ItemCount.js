@@ -6,8 +6,6 @@ import './ItemCount.css';
 
         const [contador, setContador] = useState(props.init)
     
-        const producto = props.stock > 0
-    
         const sumar = () => {
     
             if(contador < props.stock){
@@ -23,7 +21,8 @@ import './ItemCount.css';
         }
         
         const addToCart = () => {
-            console.log("Ok")
+            setContador(props.init)
+            props.onAdd(contador)
             }
     
         return (

@@ -1,6 +1,7 @@
 import ItemList from './ItemList'
 import { useState, useEffect } from "react"
 import { useParams } from 'react-router-dom';
+import { toast } from "react-toastify";
 
 let productosInicial = [
     { id : 1, categoria: "motorola" , name: "Moto E 20", img:"./imagenes/motoe20.jpg", precio: 30000, stock: 10} ,
@@ -20,7 +21,7 @@ const productoPromise = new Promise((resolve,rej)=>{
 
   export const ItemListContainer = ({}) => {
 
-    const [loading, setLoading] = useState([false])
+    const {loading, setLoading} = useState([false])
     const [productos, setProductos] = useState([])
     const {categoria} = useParams()
     console.log(categoria)
@@ -39,7 +40,7 @@ const productoPromise = new Promise((resolve,rej)=>{
           setLoading(false)
         })
           
-          .catch((err)=> console.log(err))
+          .catch(toast.error("Error al intentar cargar los productos"))
         }
       },[categoria])
 

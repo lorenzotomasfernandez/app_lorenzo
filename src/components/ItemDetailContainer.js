@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 import { useParams } from 'react-router-dom';
+import { toast } from "react-toastify";
 import ItemDetail from './ItemDetail'
 
 const productos =  [ {id : 1, categoria: "motorola" , name: "Moto E 20", img:"../imagenes/motoe20.jpg", precio: 30000, stock: 10},
@@ -34,7 +35,7 @@ export const ItemDetailContainer = () => {
           setLoading(false)
       })
       
-      .catch((err)=> console.log(err))
+      .catch(toast.error("Error al intentar cargar los productos"))
      },[id])
      console.log(producto)
 
