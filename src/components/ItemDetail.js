@@ -1,3 +1,5 @@
+import React, { useContext } from 'react'
+import { cartContext } from '../context/CartContext'
 import ItemCount from "./ItemCount";
 import { toast } from "react-toastify";
 import { Link  } from "react-router-dom";
@@ -6,13 +8,16 @@ import {useState} from "react";
 
 const ItemDetail = ({producto}) => {
 
+    const {addItem} = useContext(cartContext);
     const [select, setSelect] = useState(false);
  
     const onAdd = (unidad) => {
+
+      addItem(producto, unidad)
         if (unidad !== undefined) {
             setSelect(unidad);
           }
-          toast.success("Añadido: " + unidad + " al carrito");
+          console.log("Añadido: " + unidad + " al carrito");
         };
 
     return (
