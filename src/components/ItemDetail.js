@@ -1,10 +1,10 @@
 import React, { useContext } from 'react'
 import { cartContext } from '../context/CartContext'
 import ItemCount from "./ItemCount";
-import { toast } from "react-toastify";
 import { Link  } from "react-router-dom";
 import {Button} from "react-bootstrap";
 import {useState} from "react";
+import "./ItemDetail.css"
 
 const ItemDetail = ({producto}) => {
 
@@ -21,15 +21,17 @@ const ItemDetail = ({producto}) => {
         };
 
     return (
-        <div>
-            <p>{producto[0].name}</p>
-            <p>${producto[0].precio}</p>
-            <img src={producto[0].img}></img>
+        <div className='centrarproducto'>
+          <img src={producto[0].img}></img>
+          <div className='descripcion'>
+            <p className='nombre'>{producto[0].name}</p>
+            <p className='precio'>${producto[0].precio}</p>
             {select ? (
                 <Button variant="primary" as={Link} to="/Cart">Ir al carrito</Button>
           ) : (
             <ItemCount stock={producto[0].stock} onAdd={onAdd} init={1}/>
           )}
+         </div>
             
         </div>
 )
