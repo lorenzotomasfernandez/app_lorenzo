@@ -36,7 +36,7 @@ export const Cart = () => {
                     </div>
                 </ul>
                 :
-                <div className='cart_vacio'>
+                <div>
                      <p>No hay productos en el carrito</p>
                      <Link to="/">Volver al home</Link>
 

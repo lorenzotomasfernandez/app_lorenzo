@@ -13,7 +13,7 @@ const ItemDetail = ({producto}) => {
  
     const onAdd = (unidad) => {
 
-      addItem(producto, unidad)
+      addItem(producto[0], unidad)
         if (unidad !== undefined) {
             setSelect(unidad);
           }
