@@ -32,10 +32,10 @@ const Piedepagina = () => {
             <div className='pago'>
                 <h3><b>Medios de pago:</b></h3>
                 <ListGroup horizontal>
-                 <ListGroup.Item><a href=''><FaCcVisa/></a></ListGroup.Item>
-                 <ListGroup.Item><a href=''><FaCcMastercard/></a></ListGroup.Item>
-                 <ListGroup.Item><a href=''><SiAmericanexpress/></a></ListGroup.Item>
-                 <ListGroup.Item><a href=''><FaCcPaypal/></a></ListGroup.Item>
+                 <ListGroup.Item><FaCcVisa/></ListGroup.Item>
+                 <ListGroup.Item><FaCcMastercard/></ListGroup.Item>
+                 <ListGroup.Item><SiAmericanexpress/></ListGroup.Item>
+                 <ListGroup.Item><FaCcPaypal/></ListGroup.Item>
                </ListGroup>
             </div>
         </footer>
