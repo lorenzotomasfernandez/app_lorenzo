@@ -15,13 +15,13 @@ import { dbFirebase } from '../firebaseConfig';
           const q = query(collection(dbFirebase,"productos"),where("categoria","==",categoria))
 
            getDocs(q)
-           .then((resp)=> setProductos(resp.docs.map(p=> ({productos:p.catehoria(),id: p.id}))))
+           .then((resp)=> setProductos(resp.docs.map(p=> ({productos:p.categoria(),id: p.id}))))
            .catch((err)=> console.log(err))
   
         }else{
 
            getDocs(collection(dbFirebase,"productos"))
-           .then((resp)=> setProductos(resp.docs.map(p => ({productos:p.data(),id:p.id}))) )
+           .then((resp)=> setProductos(resp.docs.map(p => ({productos:p.data(),id: p.id}))))
            .catch((err)=> console.log(err))
         }
       },[categoria])
@@ -30,7 +30,7 @@ import { dbFirebase } from '../firebaseConfig';
 
     return (
         <div className='color'>
-            <h2> Cargando... </h2> : <ItemList productos={productos}/>
+            <ItemList productos={productos}/>
         </div>      
     )
 }

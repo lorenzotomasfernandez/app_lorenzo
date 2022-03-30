@@ -4,21 +4,20 @@ import {Button} from "react-bootstrap";
 import './Item.css';
 import { Link } from 'react-router-dom';
 
-const Item = ({producto}) => {
+const Item = ({productosInicial}) => {
 
-  const {productos,id} = producto;
-  console.log(productos,id)
+  console.log( productosInicial )
 
     return (
         
             <Card className="cardList" style={{ width: '15rem' }}>
-                <Card.Img variant="top" src={productos.img} />
+                <Card.Img variant="top" src={productosInicial.productos.img} />
                 <Card.Body>
-                  <Card.Title>{productos.name}</Card.Title>
+                  <Card.Title>{productosInicial.productos.name}</Card.Title>
                   <Card.Text>
-                    ${productos.precio}
+                    ${productosInicial.productos.precio}
                   </Card.Text>
-                  <Link to={`/item/${productos.id}`}><Button variant="success">Ver mas</Button></Link>{' '}
+                  <Link to={`/item/${productosInicial.productos.id}`}><Button variant="success">Ver mas</Button></Link>{' '}
                 </Card.Body>
             </Card>
         

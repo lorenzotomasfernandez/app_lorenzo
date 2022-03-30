@@ -13,7 +13,7 @@ const ItemDetail = ({producto}) => {
  
     const onAdd = (unidad) => {
 
-      addItem(producto[0], unidad)
+      addItem(producto, unidad)
         if (unidad !== undefined) {
             setSelect(unidad);
           }
@@ -22,14 +22,14 @@ const ItemDetail = ({producto}) => {
 
     return (
         <div className='centrarproducto'>
-          <img src={producto[0].img}></img>
+          <img src={producto.img}></img>
           <div className='descripcion'>
-            <p className='nombre'>{producto[0].name}</p>
-            <p className='precio'>${producto[0].precio}</p>
+            <p className='nombre'>{producto.name}</p>
+            <p className='precio'>${producto.precio}</p>
             {select ? (
                 <Button variant="primary" as={Link} to="/Cart">Ir al carrito</Button>
           ) : (
-            <ItemCount stock={producto[0].stock} onAdd={onAdd} init={1}/>
+            <ItemCount stock={producto.stock} onAdd={onAdd} init={1}/>
           )}
          </div>
             
