@@ -15,7 +15,7 @@ import { dbFirebase } from '../firebaseConfig';
           const q = query(collection(dbFirebase,"productos"),where("categoria","==",categoria))
 
            getDocs(q)
-           .then((resp)=> setProductos(resp.docs.map(p=> ({productos:p.categoria(),id: p.id}))))
+           .then((resp)=> setProductos(resp.docs.map(p=> ({productos:p.data(),id: p.id}))))
            .catch((err)=> console.log(err))
   
         }else{
