@@ -26,8 +26,6 @@ import { dbFirebase } from '../firebaseConfig';
         }
       },[categoria])
 
-      console.log(productos)
-
     return (
         <div className='color'>
             <ItemList productos={productos}/>

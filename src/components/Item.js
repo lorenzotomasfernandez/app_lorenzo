@@ -6,8 +6,6 @@ import { Link } from 'react-router-dom';
 
 const Item = ({productosInicial}) => {
 
-  console.log( productosInicial )
-
     return (
         
             <Card className="cardList" style={{ width: '15rem' }}>

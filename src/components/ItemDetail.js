@@ -4,6 +4,8 @@ import ItemCount from "./ItemCount";
 import { Link  } from "react-router-dom";
 import {Button} from "react-bootstrap";
 import {useState} from "react";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import "./ItemDetail.css"
 
 const ItemDetail = ({producto}) => {
@@ -17,8 +19,16 @@ const ItemDetail = ({producto}) => {
         if (unidad !== undefined) {
             setSelect(unidad);
           }
-          console.log("Añadido: " + unidad + " al carrito");
-        };
+          toast.success("Añadido: " + unidad + " al carrito" , {
+            position: "top-right",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            });  
+    }
 
     return (
         <div className='centrarproducto'>
@@ -32,7 +42,7 @@ const ItemDetail = ({producto}) => {
             <ItemCount stock={producto.stock} onAdd={onAdd} init={1}/>
           )}
          </div>
-            
+         <ToastContainer/>
         </div>
 )
 }
