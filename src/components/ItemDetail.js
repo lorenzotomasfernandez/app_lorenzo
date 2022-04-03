@@ -19,7 +19,7 @@ const ItemDetail = ({producto}) => {
         if (unidad !== undefined) {
             setSelect(unidad);
           }
-          toast.success("Añadido: " + unidad + " al carrito" , {
+          toast.success("Añadiendo: " + unidad + " al carrito" , {
             position: "top-right",
             autoClose: 2000,
             hideProgressBar: false,
