@@ -9,7 +9,7 @@ const Item = ({productosInicial}) => {
     return (
         
             <Card className="cardList" style={{ width: '15rem' }}>
-                <Card.Img variant="top" src={productosInicial.productos.img} />
+                <Card.Img variant="top" src={productosInicial.productos.img} alt="imagen del producto"/>
                 <Card.Body>
                   <Card.Title>{productosInicial.productos.name}</Card.Title>
                   <Card.Text>

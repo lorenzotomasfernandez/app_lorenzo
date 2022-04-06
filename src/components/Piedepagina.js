@@ -18,15 +18,15 @@ const Piedepagina = () => {
                <div className='redSocial'>
                   <h2><GrInstagram/> lftech.ar</h2>
                   <p>Estamos en instagram</p>
-                  <Button variant="secondary" size="lg" active>SEGUINOS</Button>
+                  <Button variant="secondary" size="lg" active><a href='https://www.instagram.com/' rel="noopener noreferrer" target="_blank">SEGUINOS</a></Button>
                </div>
             </div>
             <div className='list'>
                 <h3><b>¡Sigamos conectados!</b></h3>
                <ListGroup horizontal>
-                 <ListGroup.Item><a href=''><AiOutlineFacebook/></a></ListGroup.Item>
-                 <ListGroup.Item><a href=''><ImWhatsapp/></a></ListGroup.Item>
-                 <ListGroup.Item><a href=''><FiMail/></a></ListGroup.Item>
+                 <ListGroup.Item><a href='https://www.facebook.com/' rel="noopener noreferrer" target="_blank"><AiOutlineFacebook/></a></ListGroup.Item>
+                 <ListGroup.Item><a href='https://www.whatsapp.com/' rel="noopener noreferrer" target="_blank"><ImWhatsapp/></a></ListGroup.Item>
+                 <ListGroup.Item><a href='https://www.gmail.com/' rel="noopener noreferrer" target="_blank"><FiMail/></a></ListGroup.Item>
                </ListGroup>
             </div>
             <div className='pago'>
