@@ -22,4 +22,5 @@ const Item = ({productosInicial}) => {
     )
 }
 
+
 export default Item;
