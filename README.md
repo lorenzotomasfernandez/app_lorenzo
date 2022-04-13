@@ -17,3 +17,6 @@ This project consists of a phone e-commerce and was made in React JS, an open so
 
 [Link del proyecto](https://lftech.netlify.app/)
 
+## Demostracion y uso de la aplicacion:
+https://user-images.githubusercontent.com/86755769/163175451-89b6820f-e4b4-4bda-9a36-f687eb64b30a.mp4
+
